@@ -38,8 +38,8 @@ public class CommandSetGLImageSize extends CommandBase{
 			EntityPlayerMP entityPlayerMP = CommandBase.getCommandSenderAsPlayer(sender);
 			GLWorldSavedData data = GLWorldSavedData.get(sender.getEntityWorld());
 			String name = args[0].trim();
-			double height = Double.parseDouble(args[2]);
-			double width = Double.parseDouble(args[3]);
+			double height = Double.parseDouble(args[1]);
+			double width = Double.parseDouble(args[2]);
 			boolean isFind = false;
 			Iterator<GLImage> it_b = data.get().iterator();
 			while (it_b.hasNext()) {
@@ -61,7 +61,7 @@ public class CommandSetGLImageSize extends CommandBase{
 			sender.sendMessage(new TextComponentTranslation("removeglimage.error", args[0])
 					.setStyle(new Style().setColor(TextFormatting.RED)));
 		} catch (Exception e) {
-			throw new WrongUsageException("commands.glmove.usage");
+			throw new WrongUsageException("commands.setglimagesize.usage");
 		}
 	}
 

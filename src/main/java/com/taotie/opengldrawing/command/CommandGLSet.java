@@ -65,7 +65,7 @@ public class CommandGLSet extends CommandBase {
 			sender.sendMessage(new TextComponentTranslation("removeglimage.error", args[0])
 					.setStyle(new Style().setColor(TextFormatting.RED)));
 		} catch (Exception e) {
-			throw new WrongUsageException("commands.glmove.usage");
+			throw new WrongUsageException("commands.glset.usage");
 		}
 	}
 

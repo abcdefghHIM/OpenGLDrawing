@@ -67,7 +67,7 @@ public class CommandGLTransparent extends CommandBase {
 			sender.sendMessage(new TextComponentTranslation("removeglimage.error", args[0])
 					.setStyle(new Style().setColor(TextFormatting.RED)));
 		} catch (Exception e) {
-			throw new WrongUsageException("commands.removeglimage.usage");
+			throw new WrongUsageException("commands.gltransparent.usage");
 		}
 	}
 
