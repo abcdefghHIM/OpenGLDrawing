@@ -1,0 +1,25 @@
+﻿#PARSE_ESCAPES
+commands.gldrawing.usage=/gldrawing [目标] [路径] §a更改目标图像(路径中不能含有空格)
+commands.addglimage.usage=/addglimage [目标] §a添加目标图像
+commands.removeglimage.usage=/removeglimage [目标] §a清除目标图像
+commands.glimagelist.usage=/glimagelist §a图像列表
+commands.glmove.usage=/glmove [目标] [轴] [值] §a移动目标
+commands.glrotate.usage =/glrotate [目标] [轴] [值] §a旋转目标
+commands.glset.usage=/glset [目标] [位置] §a设置目标
+commands.gltransparent.usage=/gltransparent [目标] [true / false] §a设置目标是否透明
+commands.setglimagesize.usage=/setglimagesize [目标] [长度] [宽度] §a设置目标大小
+commands.glshow.usage=/glshow [目标] [true / false] §a设置目标是否显示
+commands.reloadglimage.usage=/reloadglimage §a重新加载
+gldrawing.error=无效路径 %s
+gldrawing.error1=无效文件 %s
+gldrawing.info=设置目标 %s 完成
+addglimage.error=名称 %s 重复
+addglimage.info=创建 %s 成功
+removeglimage.error=无目标 %s
+removeglimage.info=清除目标 %s 成功
+glmove.error=无效轴 %s
+glmove.error1=无效数字 %s
+glmove.info=移动 %s 成功
+glrotate.info=旋转 %s 成功
+glset.info=设置 %s 成功
+reloadglimage.info=重新加载成功

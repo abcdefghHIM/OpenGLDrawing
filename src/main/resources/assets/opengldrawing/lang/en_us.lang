@@ -1,0 +1,25 @@
+﻿#PARSE_ESCAPES
+commands.gldrawing.usage=/gldrawing [target] [path] §achanges the target image (the path cannot contain spaces)
+commands.addglimage.usage=/addglimage [target] §aadd target image
+commands.removeglimage.usage=/removeglimage [target] §aclear target image
+commands.glimagelist.usage=/glimagelist §aImage list
+commands.glmove.usage=/glmove [target] [axis] [value] §amove target
+commands.glrotate.usage =/glrotate [target] [axis] [value] §arotate target
+commands.glset.usage=/glset [target] [location] §aset target
+commands.gltransparent.usage=/gltransparent [target] [true / false] §asets whether the target is transparent
+commands.setglimagesize.usage=/setglimagesize [target] [length] [width] §asets the target size
+commands.glshow.usage=/glshow [target] [true / false] §asets whether the target is displayed
+commands.reloadglimage.usage=/reloadglimage §aReload
+gldrawing.error=Invalid path: %s
+gldrawing.error1=Invalid file: %s
+gldrawing.info=Target set for %s completed
+addglimage.error=Duplicate name %s
+addglimage.info=Successfully created %s
+removeglimage.error=No target for %s
+removeglimage.info=Clear target %s succeeded
+glmove.error=Invalid axis: %s
+glmove.error1=Invalid number: %s
+glmove.info=Successfully moved %s
+glrotate.info=Rotation of %s succeeded
+glset.info=Set %s successfully
+reloadglimage.info=Reload successful
