@@ -14,7 +14,4 @@
 
 注：有一些渲染Bug
 
-```
-![avatar](image.png)
-```
-
+<img src="image.png" width="855" height="507">
