@@ -15,3 +15,7 @@
 注：有一些渲染Bug
 
 <img src="image.png" width="855" height="507">
+
+## 下载
+
+[下载](https://github.com/abcdefghHIM/OpenGLDrawing/releases)
