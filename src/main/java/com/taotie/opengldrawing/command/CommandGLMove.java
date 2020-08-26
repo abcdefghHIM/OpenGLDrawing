@@ -74,6 +74,7 @@ public class CommandGLMove extends CommandBase {
 			}
 			if (!isFind)
 				throw new NameNotFoundException();
+			GLConfig.data = GLWorldSavedData.get(entityPlayerMP.world);
 			sender.sendMessage(new TextComponentTranslation("glmove.info", args[0]));
 		} catch (NumberFormatException e) {
 			sender.sendMessage(new TextComponentTranslation("removeglimage.error", args[0])

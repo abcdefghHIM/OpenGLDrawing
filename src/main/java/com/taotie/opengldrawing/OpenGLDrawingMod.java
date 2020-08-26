@@ -11,6 +11,10 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 
+/*
+ * 这是这项目里唯一的注释
+ * 因为我是一个不喜欢写注释的屑
+ * */
 @Mod(modid = OpenGLDrawingMod.MODID, name = OpenGLDrawingMod.NAME, version = OpenGLDrawingMod.VERSION, acceptedMinecraftVersions = "1.12.2")
 public class OpenGLDrawingMod {
 	public static final String MODID = "opengldrawing";
