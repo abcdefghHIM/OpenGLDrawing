@@ -27,6 +27,7 @@ public class EventLoader {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		//new ModelDawing().DrawingB();
 	}
 
 	@SubscribeEvent

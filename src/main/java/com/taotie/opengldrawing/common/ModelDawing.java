@@ -21,12 +21,8 @@ public class ModelDawing {
 				m = OBJLoader.loadModel(new File("D:\\CS\\LWJGL\\res\\models\\bunny.obj"));
 			} catch (FileNotFoundException e) {
 				e.printStackTrace();
-				Display.destroy();
-				System.exit(1);
 			} catch (IOException e) {
 				e.printStackTrace();
-				Display.destroy();
-				System.exit(1);
 			}
 			GL11.glBegin(GL11.GL_TRIANGLES);
 			for (Model.Face face : m.getFaces()) {
