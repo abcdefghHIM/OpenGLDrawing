@@ -9,9 +9,6 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class EventLoader {
-	public static boolean isChanged = false;
-	public boolean isHangUp = false;
-	public boolean isHangOut = false;
 
 	public EventLoader() {
 		MinecraftForge.EVENT_BUS.register(this);
@@ -20,22 +17,9 @@ public class EventLoader {
 	@SubscribeEvent
 	@SideOnly(Side.CLIENT)
 	public void onRenderWorldLastEvent(RenderWorldLastEvent event) {
-		if (isHangUp && !isHangOut) {
-			GLConfig.data = null;
-			synchronized (GLConfig.lock) {
-				GLConfig.lock.notify();
-			}
-			isHangOut = true;
-		}
-		if (GLConfig.data == null)
+		if (GLConfig.config.getOrSetData(null, false) == null)
 			return;
-		for (GLImage image : GLConfig.data.get()) {
-			if (isChanged)
-				isHangUp = true;
-			else {
-				isHangUp = false;
-				isHangOut = false;
-			}
+		for (GLImage image : GLConfig.config.getOrSetData(null, false).get()) {
 			if (image.o)
 				new Drawing().DrawingA(event.getPartialTicks(), image);
 		}
@@ -43,11 +27,11 @@ public class EventLoader {
 
 	@SubscribeEvent
 	public void onPlayerChangedDimensionEvent(PlayerChangedDimensionEvent event) {
-		GLConfig.data = GLWorldSavedData.get(event.player.getEntityWorld());
+		GLConfig.config.getOrSetData(event.player.getEntityWorld(), true);
 	}
 
 	@SubscribeEvent
 	public void onPlayerLoggedInEvent(PlayerLoggedInEvent event) {
-		GLConfig.data = GLWorldSavedData.get(event.player.getEntityWorld());
+		GLConfig.config.getOrSetData(event.player.getEntityWorld(), true);
 	}
 }

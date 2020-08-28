@@ -53,7 +53,7 @@ public class CommandRemoveGLImage extends CommandBase {
 			}
 			if (!isRemove)
 				throw new NameNotFoundException();
-			GLConfig.Changed(sender.getEntityWorld());
+			GLConfig.config.getOrSetData(sender.getEntityWorld(), true);
 			sender.sendMessage(new TextComponentTranslation("removeglimage.info", name));
 		} catch (NameNotFoundException e) {
 			sender.sendMessage(new TextComponentTranslation("removeglimage.error", args[0])

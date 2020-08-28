@@ -71,7 +71,7 @@ public class CommandGLDrawing extends CommandBase {
 			fileInputStream.close();
 			if (!isFind)
 				throw new NameNotFoundException();
-			GLConfig.Changed(entityPlayerMP.world);
+			GLConfig.config.getOrSetData(sender.getEntityWorld(), true);
 			sender.sendMessage(new TextComponentTranslation("gldrawing.info", args[0]));
 		} catch (FileNotFoundException e) {
 			sender.sendMessage(new TextComponentTranslation("gldrawing.error", args[1])

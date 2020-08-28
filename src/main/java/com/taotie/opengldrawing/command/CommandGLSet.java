@@ -39,9 +39,9 @@ public class CommandGLSet extends CommandBase {
 		try {
 			GLWorldSavedData data = GLWorldSavedData.get(sender.getEntityWorld());
 			String name = args[0].trim();
-			double x = Double.parseDouble(args[2]);
-			double y = Double.parseDouble(args[3]);
-			double z = Double.parseDouble(args[4]);
+			double x = Double.parseDouble(args[1]);
+			double y = Double.parseDouble(args[2]);
+			double z = Double.parseDouble(args[3]);
 			boolean isFind = false;
 			Iterator<GLImage> it_b = data.get().iterator();
 			while (it_b.hasNext()) {
@@ -59,7 +59,7 @@ public class CommandGLSet extends CommandBase {
 			}
 			if (!isFind)
 				throw new NameNotFoundException();
-			GLConfig.Changed(sender.getEntityWorld());
+			GLConfig.config.getOrSetData(sender.getEntityWorld(), true);
 			sender.sendMessage(new TextComponentTranslation("glset.info", args[0]));
 		} catch (NumberFormatException e) {
 			sender.sendMessage(new TextComponentTranslation("removeglimage.error", args[0])

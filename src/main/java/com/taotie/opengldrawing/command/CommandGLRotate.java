@@ -73,7 +73,7 @@ public class CommandGLRotate extends CommandBase {
 			}
 			if (!isFind)
 				throw new NameNotFoundException();
-			GLConfig.Changed(sender.getEntityWorld());
+			GLConfig.config.getOrSetData(sender.getEntityWorld(), true);
 			sender.sendMessage(new TextComponentTranslation("glrotate.info", args[0]));
 		} catch (NumberFormatException e) {
 			sender.sendMessage(new TextComponentTranslation("removeglimage.error", args[0])

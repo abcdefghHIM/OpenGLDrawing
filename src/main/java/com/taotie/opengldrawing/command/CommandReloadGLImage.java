@@ -30,7 +30,7 @@ public class CommandReloadGLImage extends CommandBase{
 
 	@Override
 	public void execute(MinecraftServer server, ICommandSender sender, String[] args) throws CommandException {
-		GLConfig.Changed(sender.getEntityWorld());
+		GLConfig.config.getOrSetData(sender.getEntityWorld(), true);
 		sender.sendMessage(new TextComponentTranslation("reloadglimage.info"));
 	}
 
