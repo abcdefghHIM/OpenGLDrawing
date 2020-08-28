@@ -17,11 +17,18 @@ public class EventLoader {
 	@SubscribeEvent
 	@SideOnly(Side.CLIENT)
 	public void onRenderWorldLastEvent(RenderWorldLastEvent event) {
-		if (GLConfig.config.getOrSetData(null, false) == null)
-			return;
-		for (GLImage image : GLConfig.config.getOrSetData(null, false).get()) {
-			if (image.o)
-				new Drawing().DrawingA(event.getPartialTicks(), image);
+		try
+		{
+			if (GLConfig.config.getOrSetData(null, false) == null)
+				return;
+			for (GLImage image : GLConfig.config.getOrSetData(null, false).get()) {
+				if (image.o)
+					new Drawing().DrawingA(event.getPartialTicks(), image);
+			}
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
 		}
 	}
 

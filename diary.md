@@ -11,3 +11,7 @@
 # V1.0.2
 
 修复了由java.util.ConcurrentModificationException异常引发的游戏崩溃
+
+修复了/glset命令不能使用的问题
+
+未修复java.util.ConcurrentModificationException: null异常引发的游戏崩溃
