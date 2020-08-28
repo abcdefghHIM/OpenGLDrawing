@@ -36,7 +36,6 @@ public class CommandGLShow extends CommandBase{
 	@Override
 	public void execute(MinecraftServer server, ICommandSender sender, String[] args) throws CommandException {
 		try {
-			EntityPlayerMP entityPlayerMP = CommandBase.getCommandSenderAsPlayer(sender);
 			GLWorldSavedData data = GLWorldSavedData.get(sender.getEntityWorld());
 			String name = args[0].trim();
 			boolean isFind = false;
@@ -59,7 +58,7 @@ public class CommandGLShow extends CommandBase{
 			}
 			if (!isFind)
 				throw new NameNotFoundException();
-			GLConfig.data = GLWorldSavedData.get(entityPlayerMP.world);
+			GLConfig.Changed(sender.getEntityWorld());
 			sender.sendMessage(new TextComponentTranslation("glset.info", name));
 		} catch (NameNotFoundException e) {
 			sender.sendMessage(new TextComponentTranslation("removeglimage.error", args[0])

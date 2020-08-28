@@ -36,7 +36,6 @@ public class CommandRemoveGLImage extends CommandBase {
 	@Override
 	public void execute(MinecraftServer server, ICommandSender sender, String[] args) throws CommandException {
 		try {
-			EntityPlayerMP entityPlayerMP = CommandBase.getCommandSenderAsPlayer(sender);
 			GLWorldSavedData data = GLWorldSavedData.get(sender.getEntityWorld());
 			String name = args[0].trim();
 			boolean isRemove = false;
@@ -54,7 +53,7 @@ public class CommandRemoveGLImage extends CommandBase {
 			}
 			if (!isRemove)
 				throw new NameNotFoundException();
-			GLConfig.data = GLWorldSavedData.get(entityPlayerMP.world);
+			GLConfig.Changed(sender.getEntityWorld());
 			sender.sendMessage(new TextComponentTranslation("removeglimage.info", name));
 		} catch (NameNotFoundException e) {
 			sender.sendMessage(new TextComponentTranslation("removeglimage.error", args[0])

@@ -31,7 +31,6 @@ public class CommandGLList extends CommandBase {
 
 	@Override
 	public void execute(MinecraftServer server, ICommandSender sender, String[] args) throws CommandException {
-		EntityPlayerMP entityPlayerMP = CommandBase.getCommandSenderAsPlayer(sender);
 		GLWorldSavedData data = GLWorldSavedData.get(sender.getEntityWorld());
 		StringBuffer stringBuffer = new StringBuffer();
 		for (GLImage image : data.get()) {

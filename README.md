@@ -19,3 +19,7 @@
 ## 下载
 
 [下载](https://github.com/abcdefghHIM/OpenGLDrawing/releases)
+
+## 日记
+
+[日记](diary.md)

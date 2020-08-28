@@ -51,7 +51,7 @@ public class CommandAddGLImage extends CommandBase {
 			d.y = entityPlayerMP.posY;
 			d.z = entityPlayerMP.posZ;
 			data.add(d);
-			GLConfig.data = GLWorldSavedData.get(entityPlayerMP.world);
+			GLConfig.Changed(sender.getEntityWorld());
 			sender.sendMessage(new TextComponentTranslation("addglimage.info", name));
 		} catch (NameNotFoundException e) {
 			sender.sendMessage(new TextComponentTranslation("addglimage.error", args[0])

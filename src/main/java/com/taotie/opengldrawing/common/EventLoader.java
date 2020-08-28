@@ -9,6 +9,9 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class EventLoader {
+	public static boolean isChanged = false;
+	public boolean isHangUp = false;
+	public boolean isHangOut = false;
 
 	public EventLoader() {
 		MinecraftForge.EVENT_BUS.register(this);
@@ -17,17 +20,25 @@ public class EventLoader {
 	@SubscribeEvent
 	@SideOnly(Side.CLIENT)
 	public void onRenderWorldLastEvent(RenderWorldLastEvent event) {
-		try {
-			if (GLConfig.data == null)
-				return;
-			for (GLImage image : GLConfig.data.get()) {
-				if (image.o)
-					new Drawing().DrawingA(event.getPartialTicks(), image);
+		if (isHangUp && !isHangOut) {
+			GLConfig.data = null;
+			synchronized (GLConfig.lock) {
+				GLConfig.lock.notify();
 			}
-		} catch (Exception e) {
-			e.printStackTrace();
+			isHangOut = true;
 		}
-		//new ModelDawing().DrawingB();
+		if (GLConfig.data == null)
+			return;
+		for (GLImage image : GLConfig.data.get()) {
+			if (isChanged)
+				isHangUp = true;
+			else {
+				isHangUp = false;
+				isHangOut = false;
+			}
+			if (image.o)
+				new Drawing().DrawingA(event.getPartialTicks(), image);
+		}
 	}
 
 	@SubscribeEvent
