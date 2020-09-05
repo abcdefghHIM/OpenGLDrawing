@@ -13,5 +13,5 @@ public class GLImage {
 	public double h = 1;
 	public boolean t = false;
 	public boolean o = true;
-	public String n = "";;
+	public String n = "";
 }
