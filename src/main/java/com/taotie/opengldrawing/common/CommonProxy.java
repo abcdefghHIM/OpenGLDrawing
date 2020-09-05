@@ -9,8 +9,7 @@ import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 
 public class CommonProxy {
 	public void preInit(FMLPreInitializationEvent event) {
-		GLConfig config = new GLConfig();
-		GLConfig.config = config;
+		GLConfig.config = new GLConfig();
 	}
 
 	public void init(FMLInitializationEvent event) {
