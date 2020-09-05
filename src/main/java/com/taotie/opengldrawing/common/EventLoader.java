@@ -9,6 +9,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class EventLoader {
+	public Drawing dr = new Drawing();
 
 	public EventLoader() {
 		MinecraftForge.EVENT_BUS.register(this);
@@ -23,7 +24,7 @@ public class EventLoader {
 				return;
 			for (GLImage image : GLConfig.config.getOrSetData(null, false).get()) {
 				if (image.o)
-					new Drawing().DrawingA(event.getPartialTicks(), image);
+					dr.DrawingA(event.getPartialTicks(), image);
 			}
 		}
 		catch(Exception e)
