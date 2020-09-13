@@ -9,7 +9,6 @@ import org.lwjgl.opengl.GL11;
 import org.lwjgl.util.vector.Vector3f;
 
 public class ModelDawing {
-	private static int bunnyDisplayList;
 
 	public void DrawingB() {
 		GL11.glPushMatrix();
