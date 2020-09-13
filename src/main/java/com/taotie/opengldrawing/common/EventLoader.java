@@ -36,13 +36,13 @@ public class EventLoader {
 	@SideOnly(Side.CLIENT)
 	public void onRenderWorldLastEvent(RenderWorldLastEvent event) {
 		try {
-			if (GLConfig.config.getOrSetData(null, false) == null)
-				return;
-			for (GLImage image : GLConfig.config.getOrSetData(null, false).get()) {
+			for (GLImage image : GLConfig.config.getOrSetData(false, null)) {
 				if (image.o)
 					dr.DrawingA(event.getPartialTicks(), image);
 			}
-			for (GLImage image : GLConfig.config.getOrSetData(false, null)) {
+			if (GLConfig.config.getOrSetData(null, false) == null)
+				return;
+			for (GLImage image : GLConfig.config.getOrSetData(null, false).get()) {
 				if (image.o)
 					dr.DrawingA(event.getPartialTicks(), image);
 			}
